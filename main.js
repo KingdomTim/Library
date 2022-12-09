@@ -64,13 +64,11 @@ class Store {
         localStorage.setItem('books', JSON.stringify(books))
     }
 
-    static removeBook(pages) {
-        const Books = Store.getBooks();
+    static removeBook() {
+        const books = Store.getBooks();
 
-        books.forEach((book, index) => {
-            if(book.pages === pages) {
+        books.forEach((index) => {
                 books.splice(index, 1)
-            }
         })
 
         localStorage.setItem('books', JSON.stringify(books))
