@@ -20,6 +20,12 @@ class UI {
 
     const row = document.createElement('tr')
 
+    if(book.read === true) {
+        book.read = 'Yes'
+    } else {
+        book.read = 'No'
+    }
+
     row.innerHTML = `
         <td>${book.title}</tdJavaScript BookList App | No Frameworks>
         <td>${book.author}</td>
@@ -89,7 +95,6 @@ document.querySelector('.bookForm').addEventListener('submit',(e) => {
     const pages = document.querySelector('#pages').value;
     const read = document.querySelector('#read').checked;
 
-    
     const book = new Book(title, author, pages, read)
 
     

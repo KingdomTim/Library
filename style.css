@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    height: 100vh;
+    width: 100vw;
+    background-color: aliceblue;
+    color: rgb(17, 0, 22);
+}
+
+button {
+    border-radius: 20%;
+    background-color: red;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 99vw;
+    height: 99vh;
+    gap: 10px;
+}
+
+.bookForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form1,
+.form2,
+.form3 {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3px;
+}
+
+.form1{
+    margin-left: 6px;
+}
+
+.form2 {
+    margin-right: 5px;
+}
+
+.form3 {
+    margin-right: 1px;
+}
+
+.form4 {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+.Add {
+    display: block;
+    width: 100%;
+    border-radius: 10%;
+    background-color: rgb(0, 226, 136);
+    font-weight: bold;
+}
+
+
+.title,
+.author,
+.pages,
+.read {
+    border-bottom: 1px solid black;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+
+
