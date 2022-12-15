@@ -20,17 +20,11 @@ class UI {
 
     const row = document.createElement('tr')
 
-    if(book.read === true) {
-        book.read = 'Yes'
-    } else {
-        book.read = 'No'
-    }
-
     row.innerHTML = `
-        <td>${book.title}</tdJavaScript BookList App | No Frameworks>
+        <td>${book.title}</td>
         <td>${book.author}</td>
         <td>${book.pages}</td>
-        <td>${book.read}</td>
+        <td>${book.read ? 'Yes' : 'No'}</td>
         <td><button class = 'btn'>X</td>
     `
 
@@ -70,15 +64,19 @@ class Store {
         localStorage.setItem('books', JSON.stringify(books))
     }
 
-    static removeBook(index) {
+    static removeBook(title) {
         const books = Store.getBooks();
-
-        books.splice(books.indexOf(index), 1)
-
-        localStorage.setItem('books', JSON.stringify(books))
+    
+        books.forEach((book, index) => {
+          if(book.title === title) {
+            books.splice(index, 1);
+          }
+        });
+    
+        localStorage.setItem('books', JSON.stringify(books));
+      }
     }
-}
-
+    
 
 
 document.addEventListener('DOMContentLoaded', UI.displayBooks)
@@ -105,5 +103,5 @@ document.querySelector('.bookForm').addEventListener('submit',(e) => {
 
 document.querySelector('.list').addEventListener('click', (e) => {
     UI.deleteBook(e.target)
-    Store.removeBook(e.target.parentElement.previousElementSibling.textContent)
+    Store.removeBook(e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent)
 })
